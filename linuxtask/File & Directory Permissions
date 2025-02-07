@@ -1,0 +1,56 @@
+# File & Directory Permissions
+
+## Task Overview
+In this task, we will create a directory and a file, then set the appropriate file permissions to manage access. The goal is to:
+- Allow the owner to edit the file.
+- Allow the group to read the file.
+- Deny access to others.
+
+## Steps to Complete
+
+### 1. Create the directory `/devops_workspace`
+To create the directory `/devops_workspace`, run the following command:
+```bash
+mkdir /devops_workspace
+
+
+###2. Create the file project_notes.txt
+Navigate to the /devops_workspace directory and create the file project_notes.txt:
+
+cd /devops_workspace
+touch project_notes.txt
+
+###3. Set the Permissions
+To set the permissions where:
+
+The owner can edit (read, write, execute).
+The group can read.
+Others have no access.
+Run the following command:   
+
+chmod 740 project_notes.txt
+
+Explanation of the permissions:
+
+7 for owner: Read (4) + Write (2) + Execute (1) = 7 (full access for the owner)
+4 for group: Read (4)
+0 for others: No access (0)
+
+###4. Verify Permissions
+To verify the permissions of the file, use the following command:
+ls -l project_notes.txt
+
+Expected output:
+-rwxr----- 1 <owner> <group> <size> <date> project_notes.txt
+
+Where:
+
+rwx represents read, write, and execute permissions for the owner.
+r-- represents read-only access for the group.
+--- indicates no access for others.
+
+Conclusion
+This task demonstrates how to create a directory and a file and set specific file permissions to control access for the owner, 
+group, and others. Proper permission management is essential for security and access control in a Linux environment, especially for DevOps tasks.
+
+
